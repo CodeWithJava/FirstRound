@@ -1,25 +1,31 @@
 public class Solution
 {
-	public ListNode deleteDuplicates(ListNode head)
+	public ListNode reverseBetween(ListNode head, int m, int n)
 	{
-		if(head == null || head.next == null)
+		if(head == null || m > n )
 			return head;
 
 		ListNode dummyNode = new ListNode(0);
 		dummyNode.next = head;
 		ListNode p = dummyNode;
 
-		while(p.next != null && p.next.next != null)
+		for(int i = 0;i < m - 1;i++)
+			p = p.next;
+
+		ListNode x = p.next;
+		ListNode y = x.next;
+
+		for(int i = 0;i < n - m;i++)
 		{
-			if(p.next.val == p.next.next.val)
-			{
-				int dup = p.next.val;
-				while(p.next != null && p.next.val == dup)
-					p.next = p.next.next;
-			}
-			else
-				p = p.next;
+			ListNode t = y.next;
+			y.next = x;
+			x = y;
+			y = t;
 		}
+
+		ListNode t = p.next;
+		p.next = x;
+		t.next = y;
 
 		return dummyNode.next;
 	}

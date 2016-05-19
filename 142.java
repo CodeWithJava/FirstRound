@@ -12,6 +12,7 @@ public class Solution
 		{
 			fast = fast.next.next;
 			slow = slow.next;
+
 			if(fast == slow)
 				break;
 		}
@@ -26,7 +27,7 @@ public class Solution
 			fast = fast.next;
 			slow = slow.next;
 		}
-		
+
 		return slow;
 	}
 }
