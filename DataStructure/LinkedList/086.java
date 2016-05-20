@@ -2,7 +2,7 @@ public class Solution
 {
 	public ListNode partition(ListNode head, int x)
 	{
-		if(head == null)
+		if(head == null || head.next == null)
 			return head;
 
 		ListNode dummyNode1 = new ListNode(0);
