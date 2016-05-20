@@ -3,7 +3,7 @@ class MyStack
 	Queue<Integer> q1 = new LinkedList<>();
 	Queue<Integer> q2 = new LinkedList<>();
 	
-	// Push element x onto stack
+	// Push element x onto stack.
 	public void push(int x)
 	{
 		if(empty())
@@ -33,7 +33,7 @@ class MyStack
 		}
 	}
 
-	// Removes the element on top of the stack
+	// Removes the element on top of the stack.
 	public void pop()
 	{
 		if(q1.isEmpty())
@@ -42,7 +42,7 @@ class MyStack
 			q1.poll();
 	}
 
-	// Get the top elememt
+	// Get the top elememt.
 	public int top()
 	{
 		if(q1.isEmpty())
@@ -53,7 +53,7 @@ class MyStack
 		throw new IllegalArgumentException("Empty stack");
 	}
 
-	// Return whether the stack is empty
+	// Return whether the stack is empty.
 	public boolean empty()
 	{
 		return q1.isEmpty() && q2.isEmpty();
