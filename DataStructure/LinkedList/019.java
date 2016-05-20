@@ -1,4 +1,4 @@
-public class Solution
+public class So lution
 {
 	public ListNode removeNthFromEnd(ListNode head, int n)
 	{
