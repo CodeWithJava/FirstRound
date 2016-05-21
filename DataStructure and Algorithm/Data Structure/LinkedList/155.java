@@ -24,11 +24,7 @@ public class MinStack
     public void pop()
     {
         if(head != null)
-        {
-            if(head.val != head.min)
-                head.next.min = head.min;
             head = head.next;
-        }
         else
             throw new IllegalArgumentException("Empty stack");
     }
@@ -61,4 +57,5 @@ class Node
         min = x;
         next = null;
     }
+    
 }
