@@ -18,7 +18,7 @@ public class Solution
 	private void combinationSum(int [] candidates, int start, int target, List<Integer> temp, List<List<Integer>> result)
 	{
 		if(target == 0)
-			result.add(new ArrayList<Integer>(temp));
+			result.add(new ArrayList<>(temp));
 		else
 		{
 			for(int i = start;i < candidates.length;i++)
