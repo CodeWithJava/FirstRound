@@ -1,4 +1,4 @@
-public class Solution
+public class Solution // 34ms
 {
 	public List<Integer> findMinHeightTrees(int n, int [][] edges)
 	{
@@ -51,7 +51,7 @@ public class Solution
 	}
 }
 
-public class Solution
+public class Solution // 65ms
 {
 	public List<Integer> findMinHeightTrees(int n, int [][] edges)
 	{
@@ -88,5 +88,50 @@ public class Solution
 		}
 
 		return leaves;
+	}
+}
+
+public class Solution // 58ms
+{
+	public List<Integer> findMinHeightTrees(int n, int [][] edges)
+	{
+		if(n == 1)
+			return Collections.singletonList(0);
+
+		List<Set<Integer>> graph = new ArrayList<>();
+		for(int i = 0;i < n;i++)
+			graph.add(new HashSet<>());
+
+		for(int [] edge: edges)
+		{
+			graph.get(edge[0]).add(edge[1]);
+			graph.get(edge[1]).add(edge[0]);
+		}
+
+		Queue<Integer> q = new LinkedList<>();
+		for(int i = 0;i < n;i++)
+			if(graph.get(i).size() == 1)
+				q.offer(i);
+
+		while(n > 2)
+		{
+			int size = q.size();
+			n -= size;
+			for(int i = 0;i < size;i++)
+			{
+				int x = q.poll();
+				int y = graph.get(x).iterator().next();
+				graph.get(y).remove(x);
+				if(graph.get(y).size() == 1)
+					q.offer(y); 
+			}
+		}
+
+		List<Integer> result = new ArrayList<>();
+
+		while(!q.isEmpty())
+			result.add(q.poll());
+
+		return result;
 	}
 }
