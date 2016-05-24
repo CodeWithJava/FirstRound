@@ -1,4 +1,4 @@
-//   There are two ways to implement the method
+// There are two ways to implement the method
 // Must realisze the truth of the ways
 
 // Way One 
