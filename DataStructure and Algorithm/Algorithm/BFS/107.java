@@ -10,7 +10,6 @@ public class Solution
 		Queue<TreeNode> q = new LinkedList<>();
 		q.offer(root);
 
-		List<List<Integer>> t = new ArrayList<>();
 		while(!q.isEmpty())
 		{
 			List<Integer> level = new ArrayList<>();
@@ -27,11 +26,8 @@ public class Solution
 					q.offer(node.right);
 			}
 
-			t.add(new ArrayList<>(level));
+			result.add(0,new ArrayList<>(level));
 		}
-
-		for(int i = t.size() - 1;i >= 0;i--)
-			result.add(new ArrayList<>(t.get(i)));
 
 		return result;
 	}
