@@ -15,7 +15,7 @@ public class Solution
 
 			result[i] = minmum;
 
-			for(int j = 0;j < x.length;j++)
+			for(int j = 0;j < index.length;j++)
 				if(result[index[j]] * primes[j] == minmum)
 					index[j]++;
 		}
