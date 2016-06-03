@@ -25,7 +25,7 @@ public class Solution
 				hash = (hash << 2) + map.get(s.charAt(i));
 			else
 			{
-				hash = (hash << 2) + map.get(s.charat(i));
+				hash = (hash << 2) + map.get(s.charAt(i));
 				hash = hash & (1 << 20) - 1;
 
 				if(t.contains(hash) && !added.contains(hash))
