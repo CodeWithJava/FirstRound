@@ -1,4 +1,3 @@
-
 public class Next
 {
 	public static void nextPermutation(int [] nums)
@@ -17,7 +16,7 @@ public class Next
 		}
 
 		int q = 0;
-		for(int i = nums.length - 1;i > 0;i--)
+		for(int i = nums.length - 1;i > p;i--)
 		{
 			if(nums[i] > nums[p])
 			{

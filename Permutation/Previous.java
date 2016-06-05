@@ -1,4 +1,3 @@
-
 public class Previous
 {
 	public static void previousPermutation(int [] nums)
@@ -17,7 +16,7 @@ public class Previous
 		}
 
 		int q = 0;
-		for(int i = nums.length - 1;i > 0;i--)
+		for(int i = nums.length - 1;i > p;i--)
 		{
 			if(nums[i] < nums[p])
 			{

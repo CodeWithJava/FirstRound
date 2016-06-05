@@ -1,4 +1,3 @@
-
 public class Swap
 {
 	public static void swap(int [] nums, int i, int j)
