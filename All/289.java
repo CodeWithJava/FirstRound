@@ -1,4 +1,4 @@
-/public class Solution
+public class Solution
 {
 	public void gameOfLife(int [][] board)
 	{
