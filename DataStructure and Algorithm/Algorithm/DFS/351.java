@@ -51,3 +51,60 @@ public class Solution
 		return count;
 	}
 }
+
+// Way Two
+public class Solution
+{
+	public int numberOfPatterns(int m, int n)
+	{
+		int result = 0;
+
+		boolean [][] visited = new boolean [3][3];
+
+		for(int i = 0;i < 3;i++)
+			for(int j = 0;j < 3;j++)
+				result += numberOfPatterns(m,n,i,j,0,visited);
+
+		return result;
+	}
+
+	private int numberOfPatterns(int m, int n, int x, int y, int current, boolean [][] visited)
+	{
+		visited[x][y] = true;
+
+		current++;
+
+		int count = 0;
+
+		if(current >= m && current <= n)
+			count++;
+
+		if(current == n)
+		{
+			visited[x][y] = false;
+			return count;
+		}
+
+		for(int i = 0;i < 3;i++)
+		{
+			for(int j = 0;j < 3;j++)
+			{
+				if(i == x && j == y)
+					continue;
+
+				if(visited[i][j])
+					continue;
+
+				int dx = i - x;
+				int dy = j - y;
+
+				if((Math.abs(dx) <= 1 && Math.abs(dy) <= 1) || (x != i && y != j && x - y != i - j && y - x != j - i && x + y != i + j) || visited[x + dx / 2][y + dy / 2])
+					count += numberOfPatterns(m,n,i,j,current,visited);
+			}
+		}
+
+		visited[x][y] = false;
+
+		return count;
+	}
+}
