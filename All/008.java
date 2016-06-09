@@ -4,16 +4,19 @@ public class Solution
 
 	public int myAtoi(String str)
 	{
-		int i = 0;
-		int n = str.length();
+		if(str == null || str.length() == 0)
+			return 0;
 
-		while(i < n && Character.isWhitespace(str.charAt(i)))i++;
+		int i = 0;
+		int l = str.length();
+
+		while(i < l && Character.isWhitespace(str.charAt(i)))	i++;
 
 		int sign = 1;
 
-		if(i < n && str.charAt(i) == '+')
+		if(i < l && str.charAt(i) == '+')
 			i++;
-		else if(i < n && str.charAt(i) == '-')
+		else if(i < l && str.charAt(i) == '-')
 		{
 			sign = -1;
 			i++;
@@ -21,7 +24,7 @@ public class Solution
 
 		int digits = 0;
 
-		while(i < n && Character.isDigit(str.charAt(i)))
+		while(i < l && Character.isDigit(str.charAt(i)))
 		{
 			int digit = Character.getNumericValue(str.charAt(i));
 
