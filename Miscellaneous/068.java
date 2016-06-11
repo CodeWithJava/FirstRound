@@ -10,8 +10,6 @@ public class Solution
 		int count = 0;
 		int last = 0;
 
-		List<String> list = new ArrayList<>();
-
 		for(int i = 0;i < words.length;i++)
 		{
 			count += words[i].length();
