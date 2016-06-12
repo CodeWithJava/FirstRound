@@ -47,6 +47,7 @@ public class Solution
 			int m = left + (right - left) / 2;
 			int mx = m / c;
 			int my = m % c;
+
 			if(matrix[mx][my] == target)
 				return true;
 			else if(matrix[mx][my] < target)
