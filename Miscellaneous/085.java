@@ -8,47 +8,47 @@ public class Solution
 		int r = matrix.length;
 		int c = matrix[0].length;
 
-		int [][] height = new int [r][c + 1];
-
-		int result = 0;
+		int [][] heights = new int [r][c + 1];
 
 		for(int i = 0;i < r;i++)
 		{
 			for(int j = 0;j < c;j++)
 			{
 				if(matrix[i][j] == '0')
-					height[i][j] = 0;
+					heights[i][j] = 0;
 				else
-					height[i][j] = i == 0 ? 1:height[i - 1][j] + 1;
+					heights[i][j] = i == 0 ? 1:heights[i - 1][j] + 1;
 			}
 		}
 
+		int max = 0;
+
 		for(int i = 0;i < r;i++)
 		{
-			int area = maxAreaInHistogram(height[i]);
+			int area = maxAreaInHistogram(heights[i]);
 
-			if(area > result)
-				result = area;
+			if(area > max)
+				max = area;
 		}
 
-		return result;
+		return max;
 	}
 
-	private int maxAreaInHistogram(int [] height)
+	private int maxAreaInHistogram(int [] heights)
 	{
 		Stack<Integer> stack = new Stack<>();
 
-		int i = 0;
 		int max = 0;
+		int i = 0;
 
-		while(i < height.length)
+		while(i < heights.length)
 		{
-			if(stack.isEmpty() || height[stack.peek()] <= height[i])
+			if(stack.isEmpty() || heights[stack.peek()] <= heights[i])
 				stack.push(i++);
 			else
 			{
-				int t = stack.pop();
-				max = Math.max(max,height[t] * (stack.isEmpty() ? i:i - stack.peek() - 1));
+				int x = stack.pop();
+				max = Math.max(max,heights[x] * (stack.isEmpty() ? i:(i - stack.peek() - 1)));
 			}
 		}
 

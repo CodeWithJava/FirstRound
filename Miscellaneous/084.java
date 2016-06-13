@@ -7,24 +7,24 @@ public class Solution
 
 		Stack<Integer> stack = new Stack<>();
 
-		int i = 0;
 		int max = 0;
+		int i = 0;
 
 		while(i < heights.length)
 		{
-			if(stack.isEmpty() || heights[i] >= heights[stack.peek()])
+			if(stack.isEmpty() || heights[stack.peek()] <= heights[i])
 				stack.push(i++);
 			else
 			{
-				int t = stack.pop();
-				max = Math.max(max, heights[t] * (stack.isEmpty() ? i:i - stack.peek() - 1));
+				int x = stack.pop();
+				max = Math.max(max,heights[x] * (stack.isEmpty() ? i:(i - stack.peek() - 1)));
 			}
 		}
 
 		while(!stack.isEmpty())
 		{
-			int t = stack.pop();
-			max = Math.max(max, heights[t] * (stack.isEmpty() ? i:i - stack.peek() - 1));
+			int x = stack.pop();
+			max = Math.max(max,heights[x] * (stack.isEmpty() ? i:(i - stack.peek() - 1)));
 		}
 
 		return max;
