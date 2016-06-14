@@ -57,7 +57,7 @@ public class Solution
 // Breath First Search
 public class Solution
 {
-	private Queue<Integer> q = new LinkedList<>();
+	Queue<Integer> q = new LinkedList<>();
 
 	public void solve(char [][] board)
 	{
@@ -71,16 +71,18 @@ public class Solution
 		{
 			if(board[i][0] == 'O')
 				solve(board,i,0);
+
 			if(board[i][c - 1] == 'O')
 				solve(board,i,c - 1);
 		}
 
-		for(int i = 0;i < c;i++)
+		for(int j = 0;j < c;j++)
 		{
-			if(board[0][i] == 'O')
-				solve(board,0,i);
-			if(board[r - 1][i] == 'O')
-				solve(board,r - 1,i);
+			if(board[0][j] == 'O')
+				solve(board,0,j);
+
+			if(board[r - 1][j] == 'O')
+				solve(board,r - 1,j);
 		}
 
 		for(int i = 0;i < r;i++)
@@ -89,7 +91,8 @@ public class Solution
 			{
 				if(board[i][j] == 'O')
 					board[i][j] = 'X';
-				else if(board[i][j] == '#')
+
+				if(board[i][j] == '#')
 					board[i][j] = 'O';
 			}
 		}
@@ -97,9 +100,15 @@ public class Solution
 
 	private void solve(char [][] board, int i, int j)
 	{
-		int c = board[0].length;
+		if(board == null || board.length == 0)
+			return;
+
+		if(i < 0 || i > board.length - 1 || j < 0 || j > board[0].length - 1)
+			return;
 
 		fill(board,i,j);
+
+		int c = board[0].length;
 
 		while(!q.isEmpty())
 		{
@@ -116,13 +125,14 @@ public class Solution
 
 	private void fill(char [][] board, int i, int j)
 	{
-		int r = board.length;
-		int c = board[0].length;
-
-		if(i < 0 || i > r - 1 || j < 0 || j > c - 1 || board[i][j] != 'O')
+		if(board == null || board.length == 0)
 			return;
 
-		q.offer(i * c + j);
+		if(i < 0 || i > board.length - 1 || j < 0 || j > board[0].length - 1 || board[i][j] != 'O')
+			return;
+
+		q.offer(i * board[0].length + j);
+
 		board[i][j] = '#';
 	}
 }
