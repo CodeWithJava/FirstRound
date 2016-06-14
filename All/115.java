@@ -2,22 +2,32 @@ public class Solution
 {
 	public int numDistinct(String s, String t)
 	{
-		int [][] dp = new int [s.length() + 1][t.length() + 1];
+		if(s == null && t == null)
+			return 1;
 
-		for(int i = 0;i < s.length();i++)
-			dp[i][0] = 1;
+		int m = s.length();
+		int n = t.length();
 
-		for(int i = 1;i <= s.length();i++)
+		int [][] dp = new int [n + 1][m + 1];
+		dp[0][0] = 1;
+
+		for(int i = 1;i <= n;i++)
+			dp[i][0] = 0;
+
+		for(int j = 1;j <= m;j++)
+			dp[0][j] = 1;
+
+		for(int i = 1;i <= n;i++)
 		{
-			for(int j = 1;j <= t.length();j++)
+			for(int j = 1;j <= m;j++)
 			{
-				if(s.charAt(i - 1) == t.charAt(j - 1))
-					dp[i][j] += dp[i - 1][j] + dp[i - 1][j - 1];
-				else
-					dp[i][j] += dp[i - 1][j];
+				dp[i][j] += dp[i][j - 1];
+
+				if(t.charAt(i - 1) == s.charAt(j - 1))
+					dp[i][j] += dp[i - 1][j - 1];
 			}
 		}
 
-		return dp[s.length()][t.length()];
+		return dp[n][m];
 	}
 }
