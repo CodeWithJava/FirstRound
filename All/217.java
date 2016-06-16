@@ -1,4 +1,4 @@
-// Time Limitation Exceed possible
+// Time Limit Exceeded possible
 public class Solution
 {
 	public boolean containsDuplicate(int [] nums)
