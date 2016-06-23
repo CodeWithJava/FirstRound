@@ -16,7 +16,7 @@ public class Solution
 			if(nums[i] < target && target <= nums[i + 1])
 				return ++i;
 
-			return nums.length;
+		return nums.length;
 	}
 }
 

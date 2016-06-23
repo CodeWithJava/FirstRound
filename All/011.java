@@ -1,3 +1,5 @@
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 public class Solution
 {
 	public int maxArea(int [] height)
@@ -12,7 +14,7 @@ public class Solution
 
 		while(l < r)
 		{
-			max = Math.max(max, (r - l) * Math.min(height[l], height[r]));
+			max = Math.max(max,(r - l) * Math.min(height[l],height[r]));
 
 			if(height[l] < height[r])
 				l++;
