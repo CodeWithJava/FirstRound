@@ -55,12 +55,12 @@ public class Solution
 		StringBuilder sb = new StringBuilder();
 
 		for(int i = lastWordIndex;i < words.length - 1;i++)
-		sb.append(words[i] + " ");
+			sb.append(words[i] + " ");
 
 		sb.append(words[words.length - 1]);
 
 		while(sb.length() < maxWidth)
-		sb.append(" ");
+			sb.append(" ");
 
 		result.add(sb.toString());
 
