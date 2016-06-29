@@ -5,7 +5,7 @@ public class Solution
 		List<String> result = new ArrayList<>();
 
 		if(words == null || words.length == 0)
-		return result;
+			return result;
 
 		int length = 0;
 		int lastWordIndex = 0;
