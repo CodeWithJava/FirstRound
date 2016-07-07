@@ -93,18 +93,18 @@ public class Solution
 		TreeNode cur = dummy;
 		TreeNode pre = null;
 
-		while(cur!=null)
+		while(cur != null)
 		{
-			if (cur.left==null)
+			if (cur.left == null)
 				cur = cur.right;
 			else
 			{
 				pre = cur.left;
 
-				while (pre.right!=null && pre.right!=cur)
+				while (pre.right != null && pre.right != cur)
 					pre = pre.right;
 
-				if (pre.right==null)
+				if (pre.right == null)
 				{
 					pre.right = cur;
 					cur = cur.left;

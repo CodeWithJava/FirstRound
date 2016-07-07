@@ -77,7 +77,7 @@ public class Solution
 		boolean [][] dp = new boolean [x + 1][y + 1];
 		dp[0][0] = true;
 
-		for(int i = 1;i <= x && s1.charAt(i -1) == s3.charAt(i - 1);i++)
+		for(int i = 1;i <= x && s1.charAt(i - 1) == s3.charAt(i - 1);i++)
 			dp[i][0] = true;
 
 		for(int j = 1;j <= y && s2.charAt(j - 1) == s3.charAt(j - 1);j++)
