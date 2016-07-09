@@ -2,7 +2,7 @@ public class Solution
 {
 	public int trailingZeroes(int n)
 	{
-		if(n < 0 )
+		if(n < 0)
 			throw new IllegalArgumentException("Illegal Argument");
 
 		int count = 0;
