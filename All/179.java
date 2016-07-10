@@ -15,7 +15,7 @@ public class Solution
 		StringBuilder sb = new StringBuilder();
 
 		for(String str: strs)
-			sb.appned(str);
+			sb.append(str);
 
 		while(sb.charAt(0) == '0' && sb.length() > 1)
 			sb.deleteCharAt(0);
