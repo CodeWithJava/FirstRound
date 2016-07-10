@@ -1,4 +1,4 @@
-public class Soltuion
+public class Solution
 {
 	public int hammingWeight(int n)
 	{
