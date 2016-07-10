@@ -26,7 +26,7 @@ public class Solution
 		{
 			int x = q.poll();
 
-			for(int  i = 0;i < l;i++)
+			for(int i = 0;i < l;i++)
 			{
 				if(prerequisites[i][1] == x)
 				{
