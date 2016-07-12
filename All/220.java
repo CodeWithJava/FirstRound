@@ -11,8 +11,8 @@ public class Solution
 		{
 			long cur = (long)nums[i];
 
-			long leftBoundary = (long)cur - t;
-			long rightBoundary = (long) cur + t + 1;
+			long leftBoundary = cur - t;
+			long rightBoundary = cur + t + 1;
 
 			SortedSet<Long> sub = set.subSet(leftBoundary,rightBoundary);
 
