@@ -5,7 +5,7 @@ public class Solution
 		if(words == null || words.length == 0 || word1 == null || word1.length() == 0 || word2 == null || word2.length() == 0)
 			throw new IllegalArgumentException("Input is invalid");
 
-		int p = - 1;
+		int p = -1;
 		int q = -1;
 
 		int miniDistance = Integer.MAX_VALUE;
