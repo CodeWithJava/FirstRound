@@ -19,7 +19,7 @@ public class Solution
 		while(i < candidates.size() && candidates.get(i).length() == l)
 		{
 			if(candidates.get(i).compareTo(low) < 0)
-				count --;
+				count--;
 
 			i++;
 		}
@@ -29,7 +29,7 @@ public class Solution
 		while(i >= 0 && candidates.get(i).length() == r)
 		{
 			if(candidates.get(i).compareTo(high) > 0)
-				count --;
+				count--;
 
 			i--;
 		}
