@@ -7,7 +7,8 @@ public class Solution
 	public String numberToWords(int num)
 	{
 		if(num == 0)
-		return "Zero";
+			return "Zero";
+
 		return helper(num);
 	}
 
