@@ -6,7 +6,7 @@ public class Solution
 			return "";
 		Map<Character,AlienChar> graph = new HashMap<>();
 
-		boolean isBuildSuceed = buildGraph(words,graph);
+		boolean isBuildSucceed = buildGraph(words,graph);
 		
 		if(!isBuildSuceed)
 			return "";
