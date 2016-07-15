@@ -17,7 +17,7 @@ public class Solution
 			if(map.containsKey(pattern.charAt(i)))
 			{
 				if(!map.get(pattern.charAt(i)).equals(s[i]))
-				return false;
+					return false;
 			}
 			else if (map.containsValue(s[i]))
 				return false;
