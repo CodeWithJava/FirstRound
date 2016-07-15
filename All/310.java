@@ -38,7 +38,7 @@ public class Solution // 34ms
 				n--;
 				for(int p: graph.get(x))
 				{
-					if(--inDegree[p])
+					if(--inDegree[p] == 1)
 						q.offer(p);
 				}
 			}
