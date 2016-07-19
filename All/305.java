@@ -27,7 +27,7 @@ public class Solution
 				int i = p[0] + directions[r][0];
 				int j = p[1] + directions[r][1];
 
-				if(i >= 0 && j >= 0 && i <= m - 1 && j <= n - 1 && rootArray[i *n + j] != -1)
+				if(i >= 0 && j >= 0 && i <= m - 1 && j <= n - 1 && rootArray[i * n + j] != -1)
 				{
 					int thisRoot = getRoot(rootArray,i * n + j);
 					if(thisRoot != index)

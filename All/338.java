@@ -8,7 +8,7 @@ public class Solution
 
 		int [] result = new int [num + 1];
 
-		for(int i = 0;i <= n;i++)
+		for(int i = 0;i <= num;i++)
 			result[i] = count(i);
 
 		return result;
